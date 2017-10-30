@@ -24,7 +24,6 @@ void setup() {
   pinMode(r, OUTPUT);
   pinMode(g, OUTPUT);
   pinMode(b, OUTPUT);
-  Serial.begin(9600);
 }
 
 void loop() {
@@ -32,9 +31,6 @@ void loop() {
   pot_r_val = analogRead(r);
   pot_g_val = analogRead(g);
   pot_b_val = analogRead(b);
-//  Serial.print(pot_r_val);
-//  Serial.print(pot_g_val);
-//  Serial.print(pot_b_val);
   
   // Map potentiometer values to LED color channels //
   out_r = map(pot_r_val, 0, 1023, 0, 255);
@@ -46,9 +42,6 @@ void loop() {
   out_g = 255 - out_g;
   out_b = 255 - out_b;
   #endif
-//  Serial.print(out_r);
-//  Serial.print(out_g);
-//  Serial.print(out_b);
   
   // Update LED color channels //
   analogWrite(r, out_r);
